@@ -48,7 +48,7 @@ sudo cp -a _output/cert/ /etc/miniblog/ # 将 CA 文件复制到 miniblog 配置
 cat > miniblog.service.template <<EOF
 [Unit]
 Description=APIServer for blog platform.
-Documentation=https://github.com/onexstack/miniblog/blob/master/init/README.md
+Documentation=https://github.com/ashwinyue/maltx/blob/master/init/README.md
 
 [Service]
 WorkingDirectory=/data/miniblog

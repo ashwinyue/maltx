@@ -1,7 +1,7 @@
 // Copyright 2024 孔令飞 <colin404@foxmail.com>. All rights reserved.
 // Use of this source code is governed by a MIT style
 // license that can be found in the LICENSE file. The original repo for
-// this file is https://github.com/onexstack/miniblog. The professional
+// this file is https://github.com/ashwinyue/maltx. The professional
 // version of this repository is https://github.com/onexstack/onex.
 
 package app
@@ -14,8 +14,8 @@ import (
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 
-	"github.com/onexstack/miniblog/cmd/mb-apiserver/app/options"
-	"github.com/onexstack/miniblog/internal/pkg/log"
+	"github.com/ashwinyue/maltx/cmd/mb-apiserver/app/options"
+	"github.com/ashwinyue/maltx/internal/pkg/log"
 )
 
 var configFile string // 配置文件路径

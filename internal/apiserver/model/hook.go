@@ -1,7 +1,7 @@
 // Copyright 2024 孔令飞 <colin404@foxmail.com>. All rights reserved.
 // Use of this source code is governed by a MIT style
 // license that can be found in the LICENSE file. The original repo for
-// this file is https://github.com/onexstack/miniblog. The professional
+// this file is https://github.com/ashwinyue/maltx. The professional
 // version of this repository is https://github.com/onexstack/onex.
 
 package model
@@ -10,7 +10,7 @@ import (
 	"github.com/onexstack/onexstack/pkg/authn"
 	"gorm.io/gorm"
 
-	"github.com/onexstack/miniblog/internal/pkg/rid"
+	"github.com/ashwinyue/maltx/internal/pkg/rid"
 )
 
 // AfterCreate 在创建数据库记录之后生成 postID.

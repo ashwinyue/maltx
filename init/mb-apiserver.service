@@ -2,7 +2,7 @@
 # 描述服务的功能
 Description=APIServer for mini blog platform.
 # 提供服务文档的链接
-Documentation=https://github.com/onexstack/miniblog/blob/master/init/README.md
+Documentation=https://github.com/ashwinyue/maltx/blob/master/init/README.md
 # 确保网络服务已启动后再启动此服务
 After=network.target
 

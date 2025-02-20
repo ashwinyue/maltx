@@ -1,23 +1,23 @@
 // Copyright 2024 孔令飞 <colin404@foxmail.com>. All rights reserved.
 // Use of this source code is governed by a MIT style
 // license that can be found in the LICENSE file. The original repo for
-// this file is https://github.com/onexstack/miniblog. The professional
+// this file is https://github.com/ashwinyue/maltx. The professional
 // version of this repository is https://github.com/onexstack/onex.
 
 package biz
 
-//go:generate mockgen -destination mock_biz.go -package biz github.com/onexstack/miniblog/internal/apiserver/biz IBiz
+//go:generate mockgen -destination mock_biz.go -package biz github.com/ashwinyue/maltx/internal/apiserver/biz IBiz
 
 import (
 	"github.com/google/wire"
 	"github.com/onexstack/onexstack/pkg/authz"
 
-	postv1 "github.com/onexstack/miniblog/internal/apiserver/biz/v1/post"
-	userv1 "github.com/onexstack/miniblog/internal/apiserver/biz/v1/user"
+	postv1 "github.com/ashwinyue/maltx/internal/apiserver/biz/v1/post"
+	userv1 "github.com/ashwinyue/maltx/internal/apiserver/biz/v1/user"
 
 	// Post V2 版本（未实现，仅展示用）
-	// postv2 "github.com/onexstack/miniblog/internal/apiserver/biz/v2/post".
-	"github.com/onexstack/miniblog/internal/apiserver/store"
+	// postv2 "github.com/ashwinyue/maltx/internal/apiserver/biz/v2/post".
+	"github.com/ashwinyue/maltx/internal/apiserver/store"
 )
 
 // ProviderSet 是一个 Wire 的 Provider 集合，用于声明依赖注入的规则.

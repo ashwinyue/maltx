@@ -1,7 +1,7 @@
 // Copyright 2024 孔令飞 <colin404@foxmail.com>. All rights reserved.
 // Use of this source code is governed by a MIT style
 // license that can be found in the LICENSE file. The original repo for
-// this file is https://github.com/onexstack/miniblog. The professional
+// this file is https://github.com/ashwinyue/maltx. The professional
 // version of this repository is https://github.com/onexstack/onex.
 
 // nolint: err113
@@ -18,7 +18,7 @@ import (
 	utilerrors "k8s.io/apimachinery/pkg/util/errors"
 	"k8s.io/apimachinery/pkg/util/sets"
 
-	"github.com/onexstack/miniblog/internal/apiserver"
+	"github.com/ashwinyue/maltx/internal/apiserver"
 )
 
 // 定义支持的服务器模式集合.

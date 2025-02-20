@@ -1,7 +1,7 @@
 // Copyright 2024 孔令飞 <colin404@foxmail.com>. All rights reserved.
 // Use of this source code is governed by a MIT style
 // license that can be found in the LICENSE file. The original repo for
-// this file is https://github.com/onexstack/miniblog. The professional
+// this file is https://github.com/ashwinyue/maltx. The professional
 // version of this repository is https://github.com/onexstack/onex.
 
 package gin
@@ -13,10 +13,10 @@ import (
 	"github.com/onexstack/onexstack/pkg/core"
 	"github.com/onexstack/onexstack/pkg/token"
 
-	"github.com/onexstack/miniblog/internal/apiserver/model"
-	"github.com/onexstack/miniblog/internal/pkg/contextx"
-	"github.com/onexstack/miniblog/internal/pkg/errno"
-	"github.com/onexstack/miniblog/internal/pkg/log"
+	"github.com/ashwinyue/maltx/internal/apiserver/model"
+	"github.com/ashwinyue/maltx/internal/pkg/contextx"
+	"github.com/ashwinyue/maltx/internal/pkg/errno"
+	"github.com/ashwinyue/maltx/internal/pkg/log"
 )
 
 // UserRetriever 用于根据用户名获取用户的接口.

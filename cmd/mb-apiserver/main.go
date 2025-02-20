@@ -1,7 +1,7 @@
 // Copyright 2024 孔令飞 <colin404@foxmail.com>. All rights reserved.
 // Use of this source code is governed by a MIT style
 // license that can be found in the LICENSE file. The original repo for
-// this file is https://github.com/onexstack/miniblog. The professional
+// this file is https://github.com/ashwinyue/maltx. The professional
 // version of this repository is https://github.com/onexstack/onex.
 
 package main
@@ -9,7 +9,7 @@ package main
 import (
 	"os"
 
-	"github.com/onexstack/miniblog/cmd/mb-apiserver/app"
+	"github.com/ashwinyue/maltx/cmd/mb-apiserver/app"
 	// 导入 automaxprocs 包，可以在程序启动时自动设置 GOMAXPROCS 配置，
 	// 使其与 Linux 容器的 CPU 配额相匹配。
 	// 这避免了在容器中运行时，因默认 GOMAXPROCS 值不合适导致的性能问题，

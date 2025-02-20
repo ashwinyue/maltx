@@ -1,7 +1,7 @@
 // Copyright 2024 孔令飞 <colin404@foxmail.com>. All rights reserved.
 // Use of this source code is governed by a MIT style
 // license that can be found in the LICENSE file. The original repo for
-// this file is https://github.com/onexstack/miniblog. The professional
+// this file is https://github.com/ashwinyue/maltx. The professional
 // version of this repository is https://github.com/onexstack/onex.
 
 package conversion
@@ -9,8 +9,8 @@ package conversion
 import (
 	"github.com/onexstack/onexstack/pkg/core"
 
-	"github.com/onexstack/miniblog/internal/apiserver/model"
-	apiv1 "github.com/onexstack/miniblog/pkg/api/apiserver/v1"
+	"github.com/ashwinyue/maltx/internal/apiserver/model"
+	apiv1 "github.com/ashwinyue/maltx/pkg/api/apiserver/v1"
 )
 
 // UserModelToUserV1 将模型层的 UserM（用户模型对象）转换为 Protobuf 层的 User（v1 用户对象）.

@@ -1,7 +1,7 @@
 // Copyright 2024 孔令飞 <colin404@foxmail.com>. All rights reserved.
 // Use of this source code is governed by a MIT style
 // license that can be found in the LICENSE file. The original repo for
-// this file is https://github.com/onexstack/miniblog. The professional
+// this file is https://github.com/ashwinyue/maltx. The professional
 // version of this repository is https://github.com/onexstack/onex.
 
 package apiserver
@@ -13,10 +13,10 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/onexstack/onexstack/pkg/core"
 
-	handler "github.com/onexstack/miniblog/internal/apiserver/handler/http"
-	"github.com/onexstack/miniblog/internal/pkg/errno"
-	mw "github.com/onexstack/miniblog/internal/pkg/middleware/gin"
-	"github.com/onexstack/miniblog/internal/pkg/server"
+	handler "github.com/ashwinyue/maltx/internal/apiserver/handler/http"
+	"github.com/ashwinyue/maltx/internal/pkg/errno"
+	mw "github.com/ashwinyue/maltx/internal/pkg/middleware/gin"
+	"github.com/ashwinyue/maltx/internal/pkg/server"
 )
 
 // ginServer 定义一个使用 Gin 框架开发的 HTTP 服务器.

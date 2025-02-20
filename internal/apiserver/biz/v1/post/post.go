@@ -1,12 +1,12 @@
 // Copyright 2024 孔令飞 <colin404@foxmail.com>. All rights reserved.
 // Use of this source code is governed by a MIT style
 // license that can be found in the LICENSE file. The original repo for
-// this file is https://github.com/onexstack/miniblog. The professional
+// this file is https://github.com/ashwinyue/maltx. The professional
 // version of this repository is https://github.com/onexstack/onex.
 
 package post
 
-//go:generate mockgen -destination mock_post.go -package post github.com/onexstack/miniblog/internal/apiserver/biz/v1/post PostBiz
+//go:generate mockgen -destination mock_post.go -package post github.com/ashwinyue/maltx/internal/apiserver/biz/v1/post PostBiz
 
 import (
 	"context"
@@ -14,11 +14,11 @@ import (
 	"github.com/jinzhu/copier"
 	"github.com/onexstack/onexstack/pkg/store/where"
 
-	"github.com/onexstack/miniblog/internal/apiserver/model"
-	"github.com/onexstack/miniblog/internal/apiserver/pkg/conversion"
-	"github.com/onexstack/miniblog/internal/apiserver/store"
-	"github.com/onexstack/miniblog/internal/pkg/contextx"
-	apiv1 "github.com/onexstack/miniblog/pkg/api/apiserver/v1"
+	"github.com/ashwinyue/maltx/internal/apiserver/model"
+	"github.com/ashwinyue/maltx/internal/apiserver/pkg/conversion"
+	"github.com/ashwinyue/maltx/internal/apiserver/store"
+	"github.com/ashwinyue/maltx/internal/pkg/contextx"
+	apiv1 "github.com/ashwinyue/maltx/pkg/api/apiserver/v1"
 )
 
 // PostBiz 定义处理帖子请求所需的方法.

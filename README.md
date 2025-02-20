@@ -47,7 +47,7 @@ miniblog 项目有配套的课程和书籍：
 要求 Go 版本 >= 1.23.4。安装命令如下：
 
 ```bash
-$ git clone https://github.com/onexstack/miniblog.git # 克隆项目
+$ git clone https://github.com/ashwinyue/maltx.git # 克隆项目
 $ cd miniblog
 $ go work init . # 初始化 Go 工作区
 $ go work use .

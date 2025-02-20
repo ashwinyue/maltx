@@ -1,7 +1,7 @@
 // Copyright 2024 孔令飞 <colin404@foxmail.com>. All rights reserved.
 // Use of this source code is governed by a MIT style
 // license that can be found in the LICENSE file. The original repo for
-// this file is https://github.com/onexstack/miniblog. The professional
+// this file is https://github.com/ashwinyue/maltx. The professional
 // version of this repository is https://github.com/onexstack/onex.
 
 package main
@@ -18,9 +18,9 @@ import (
 	"google.golang.org/grpc/credentials/insecure"
 	"google.golang.org/grpc/metadata"
 
-	"github.com/onexstack/miniblog/examples/helper"
-	"github.com/onexstack/miniblog/internal/pkg/known"
-	apiv1 "github.com/onexstack/miniblog/pkg/api/apiserver/v1"
+	"github.com/ashwinyue/maltx/examples/helper"
+	"github.com/ashwinyue/maltx/internal/pkg/known"
+	apiv1 "github.com/ashwinyue/maltx/pkg/api/apiserver/v1"
 )
 
 var (

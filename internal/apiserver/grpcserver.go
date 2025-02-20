@@ -1,7 +1,7 @@
 // Copyright 2024 孔令飞 <colin404@foxmail.com>. All rights reserved.
 // Use of this source code is governed by a MIT style
 // license that can be found in the LICENSE file. The original repo for
-// this file is https://github.com/onexstack/miniblog. The professional
+// this file is https://github.com/ashwinyue/maltx. The professional
 // version of this repository is https://github.com/onexstack/onex.
 
 package apiserver
@@ -15,10 +15,10 @@ import (
 	genericvalidation "github.com/onexstack/onexstack/pkg/validation"
 	"google.golang.org/grpc"
 
-	handler "github.com/onexstack/miniblog/internal/apiserver/handler/grpc"
-	mw "github.com/onexstack/miniblog/internal/pkg/middleware/grpc"
-	"github.com/onexstack/miniblog/internal/pkg/server"
-	apiv1 "github.com/onexstack/miniblog/pkg/api/apiserver/v1"
+	handler "github.com/ashwinyue/maltx/internal/apiserver/handler/grpc"
+	mw "github.com/ashwinyue/maltx/internal/pkg/middleware/grpc"
+	"github.com/ashwinyue/maltx/internal/pkg/server"
+	apiv1 "github.com/ashwinyue/maltx/pkg/api/apiserver/v1"
 )
 
 // grpcServer 定义一个 gRPC 服务器.

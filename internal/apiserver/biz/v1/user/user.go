@@ -1,12 +1,12 @@
 // Copyright 2024 孔令飞 <colin404@foxmail.com>. All rights reserved.
 // Use of this source code is governed by a MIT style
 // license that can be found in the LICENSE file. The original repo for
-// this file is https://github.com/onexstack/miniblog. The professional
+// this file is https://github.com/ashwinyue/maltx. The professional
 // version of this repository is https://github.com/onexstack/onex.
 
 package user
 
-//go:generate mockgen -destination mock_user.go -package user github.com/onexstack/miniblog/internal/apiserver/biz/v1/user UserBiz
+//go:generate mockgen -destination mock_user.go -package user github.com/ashwinyue/maltx/internal/apiserver/biz/v1/user UserBiz
 
 import (
 	"context"
@@ -20,14 +20,14 @@ import (
 	"golang.org/x/sync/errgroup"
 	"google.golang.org/protobuf/types/known/timestamppb"
 
-	"github.com/onexstack/miniblog/internal/apiserver/model"
-	"github.com/onexstack/miniblog/internal/apiserver/pkg/conversion"
-	"github.com/onexstack/miniblog/internal/apiserver/store"
-	"github.com/onexstack/miniblog/internal/pkg/contextx"
-	"github.com/onexstack/miniblog/internal/pkg/errno"
-	"github.com/onexstack/miniblog/internal/pkg/known"
-	"github.com/onexstack/miniblog/internal/pkg/log"
-	apiv1 "github.com/onexstack/miniblog/pkg/api/apiserver/v1"
+	"github.com/ashwinyue/maltx/internal/apiserver/model"
+	"github.com/ashwinyue/maltx/internal/apiserver/pkg/conversion"
+	"github.com/ashwinyue/maltx/internal/apiserver/store"
+	"github.com/ashwinyue/maltx/internal/pkg/contextx"
+	"github.com/ashwinyue/maltx/internal/pkg/errno"
+	"github.com/ashwinyue/maltx/internal/pkg/known"
+	"github.com/ashwinyue/maltx/internal/pkg/log"
+	apiv1 "github.com/ashwinyue/maltx/pkg/api/apiserver/v1"
 )
 
 // UserBiz 定义处理用户请求所需的方法.

@@ -1,4 +1,4 @@
-module github.com/onexstack/miniblog
+module github.com/ashwinyue/maltx
 
 go 1.23.5
 

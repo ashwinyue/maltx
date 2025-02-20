@@ -1,7 +1,7 @@
 // Copyright 2024 孔令飞 <colin404@foxmail.com>. All rights reserved.
 // Use of this source code is governed by a MIT style
 // license that can be found in the LICENSE file. The original repo for
-// this file is https://github.com/onexstack/miniblog. The professional
+// this file is https://github.com/ashwinyue/maltx. The professional
 // version of this repository is https://github.com/onexstack/onex.
 
 package gin
@@ -9,9 +9,9 @@ package gin
 import (
 	"github.com/gin-gonic/gin"
 
-	"github.com/onexstack/miniblog/internal/pkg/contextx"
-	"github.com/onexstack/miniblog/internal/pkg/known"
-	"github.com/onexstack/miniblog/internal/pkg/log"
+	"github.com/ashwinyue/maltx/internal/pkg/contextx"
+	"github.com/ashwinyue/maltx/internal/pkg/known"
+	"github.com/ashwinyue/maltx/internal/pkg/log"
 )
 
 // AuthnBypasswMiddleware 是一个认证中间件，
