@@ -9,8 +9,8 @@ package app
 import (
 	"fmt"
 
-	"github.com/onexstack/onexstack/pkg/core"
-	"github.com/onexstack/onexstack/pkg/version"
+	"github.com/ashwinyue/maltx/pkg/core"
+	"github.com/ashwinyue/maltx/pkg/version"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 

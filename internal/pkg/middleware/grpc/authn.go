@@ -9,7 +9,7 @@ package grpc
 import (
 	"context"
 
-	"github.com/onexstack/onexstack/pkg/token"
+	"github.com/ashwinyue/maltx/pkg/token"
 	"google.golang.org/grpc"
 
 	"github.com/ashwinyue/maltx/internal/apiserver/model"

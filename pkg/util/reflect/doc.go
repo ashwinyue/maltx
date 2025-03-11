@@ -4,4 +4,4 @@
 // this file is https://github.com/onexstack/onex.
 //
 
-package reflect // import "github.com/onexstack/onexstack/internal/pkg/util/reflect"
+package reflect // import "github.com/ashwinyue/maltx/internal/pkg/util/reflect"

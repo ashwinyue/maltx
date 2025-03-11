@@ -11,7 +11,7 @@ import (
 	"log"
 	"path/filepath"
 
-	"github.com/onexstack/onexstack/pkg/db"
+	"github.com/ashwinyue/maltx/pkg/db"
 	"github.com/spf13/pflag"
 	"gorm.io/gen"
 	"gorm.io/gen/field"

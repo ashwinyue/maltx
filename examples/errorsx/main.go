@@ -9,7 +9,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/onexstack/onexstack/pkg/errorsx"
+	"github.com/ashwinyue/maltx/pkg/errorsx"
 
 	"github.com/ashwinyue/maltx/internal/pkg/errno"
 )

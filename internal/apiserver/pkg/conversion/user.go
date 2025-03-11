@@ -7,7 +7,7 @@
 package conversion
 
 import (
-	"github.com/onexstack/onexstack/pkg/core"
+	"github.com/ashwinyue/maltx/pkg/core"
 
 	"github.com/ashwinyue/maltx/internal/apiserver/model"
 	apiv1 "github.com/ashwinyue/maltx/pkg/api/apiserver/v1"

@@ -9,7 +9,7 @@ package validation
 import (
 	"context"
 
-	genericvalidation "github.com/onexstack/onexstack/pkg/validation"
+	genericvalidation "github.com/ashwinyue/maltx/pkg/validation"
 
 	"github.com/ashwinyue/maltx/internal/pkg/contextx"
 	"github.com/ashwinyue/maltx/internal/pkg/errno"

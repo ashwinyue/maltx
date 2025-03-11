@@ -4,4 +4,4 @@
 // this file is https://github.com/onexstack/onex.
 //
 
-package log // import "github.com/onexstack/onexstack/internal/pkg/log"
+package log // import "github.com/ashwinyue/maltx/internal/pkg/log"

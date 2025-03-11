@@ -9,7 +9,7 @@ package errno
 import (
 	"net/http"
 
-	"github.com/onexstack/onexstack/pkg/errorsx"
+	"github.com/ashwinyue/maltx/pkg/errorsx"
 )
 
 var (

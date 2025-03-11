@@ -4,4 +4,4 @@
 // this file is https://github.com/onexstack/onex.
 //
 
-package retry // import "github.com/onexstack/onexstack/internal/pkg/util/retry"
+package retry // import "github.com/ashwinyue/maltx/internal/pkg/util/retry"

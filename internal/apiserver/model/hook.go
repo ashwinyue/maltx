@@ -7,7 +7,7 @@
 package model
 
 import (
-	"github.com/onexstack/onexstack/pkg/authn"
+	"github.com/ashwinyue/maltx/pkg/authn"
 	"gorm.io/gorm"
 
 	"github.com/ashwinyue/maltx/internal/pkg/rid"

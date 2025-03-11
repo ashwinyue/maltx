@@ -4,4 +4,4 @@
 // this file is https://github.com/onexstack/onex.
 //
 
-package strings // import "github.com/onexstack/onexstack/internal/pkg/util/strings"
+package strings // import "github.com/ashwinyue/maltx/internal/pkg/util/strings"

@@ -10,8 +10,8 @@
 package apiserver
 
 import (
+	"github.com/ashwinyue/maltx/pkg/authz"
 	"github.com/google/wire"
-	"github.com/onexstack/onexstack/pkg/authz"
 
 	"github.com/ashwinyue/maltx/internal/apiserver/biz"
 	"github.com/ashwinyue/maltx/internal/apiserver/pkg/validation"

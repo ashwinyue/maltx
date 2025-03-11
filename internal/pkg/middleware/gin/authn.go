@@ -9,9 +9,9 @@ package gin
 import (
 	"context"
 
+	"github.com/ashwinyue/maltx/pkg/core"
+	"github.com/ashwinyue/maltx/pkg/token"
 	"github.com/gin-gonic/gin"
-	"github.com/onexstack/onexstack/pkg/core"
-	"github.com/onexstack/onexstack/pkg/token"
 
 	"github.com/ashwinyue/maltx/internal/apiserver/model"
 	"github.com/ashwinyue/maltx/internal/pkg/contextx"

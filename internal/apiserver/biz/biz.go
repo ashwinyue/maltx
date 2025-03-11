@@ -9,8 +9,8 @@ package biz
 //go:generate mockgen -destination mock_biz.go -package biz github.com/ashwinyue/maltx/internal/apiserver/biz IBiz
 
 import (
+	"github.com/ashwinyue/maltx/pkg/authz"
 	"github.com/google/wire"
-	"github.com/onexstack/onexstack/pkg/authz"
 
 	postv1 "github.com/ashwinyue/maltx/internal/apiserver/biz/v1/post"
 	userv1 "github.com/ashwinyue/maltx/internal/apiserver/biz/v1/user"

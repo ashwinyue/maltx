@@ -12,11 +12,11 @@ import (
 	"context"
 	"sync"
 
+	"github.com/ashwinyue/maltx/pkg/authn"
+	"github.com/ashwinyue/maltx/pkg/authz"
+	"github.com/ashwinyue/maltx/pkg/store/where"
+	"github.com/ashwinyue/maltx/pkg/token"
 	"github.com/jinzhu/copier"
-	"github.com/onexstack/onexstack/pkg/authn"
-	"github.com/onexstack/onexstack/pkg/authz"
-	"github.com/onexstack/onexstack/pkg/store/where"
-	"github.com/onexstack/onexstack/pkg/token"
 	"golang.org/x/sync/errgroup"
 	"google.golang.org/protobuf/types/known/timestamppb"
 

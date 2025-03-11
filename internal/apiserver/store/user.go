@@ -10,8 +10,8 @@ package store
 import (
 	"context"
 
-	genericstore "github.com/onexstack/onexstack/pkg/store"
-	"github.com/onexstack/onexstack/pkg/store/where"
+	genericstore "github.com/ashwinyue/maltx/pkg/store"
+	"github.com/ashwinyue/maltx/pkg/store/where"
 
 	"github.com/ashwinyue/maltx/internal/apiserver/model"
 )

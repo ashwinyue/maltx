@@ -9,9 +9,9 @@ package validation
 import (
 	"context"
 
+	genericvalidation "github.com/ashwinyue/maltx/pkg/validation"
 	validation "github.com/go-ozzo/ozzo-validation/v4"
 	"github.com/go-ozzo/ozzo-validation/v4/is"
-	genericvalidation "github.com/onexstack/onexstack/pkg/validation"
 
 	"github.com/ashwinyue/maltx/internal/pkg/errno"
 	apiv1 "github.com/ashwinyue/maltx/pkg/api/apiserver/v1"

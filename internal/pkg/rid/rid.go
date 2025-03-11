@@ -7,7 +7,7 @@
 package rid
 
 import (
-	"github.com/onexstack/onexstack/pkg/id"
+	"github.com/ashwinyue/maltx/pkg/id"
 )
 
 const defaultABC = "abcdefghijklmnopqrstuvwxyz1234567890"

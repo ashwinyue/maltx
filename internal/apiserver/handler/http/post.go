@@ -9,7 +9,7 @@ package http
 import (
 	"github.com/gin-gonic/gin"
 
-	"github.com/onexstack/onexstack/pkg/core"
+	"github.com/ashwinyue/maltx/pkg/core"
 )
 
 // CreatePost 创建博客帖子.
