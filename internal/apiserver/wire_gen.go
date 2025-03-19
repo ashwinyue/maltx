@@ -18,21 +18,21 @@ import (
 
 func InitializeWebServer(config *Config) (server.Server, error) {
 	string2 := config.ServerMode
-	redisStore, err := ProvideRedis(config)
-	if err != nil {
-		return nil, err
-	}
 	db, err := ProvideDB(config)
 	if err != nil {
 		return nil, err
 	}
-	datastore := store.NewStore(db)
+	redisStore, err := ProvideRedis(config)
+	if err != nil {
+		return nil, err
+	}
+	datastore := store.NewStore(db, redisStore)
 	v := authz.DefaultOptions()
 	authzAuthz, err := authz.NewAuthz(db, v...)
 	if err != nil {
 		return nil, err
 	}
-	bizBiz := biz.NewBiz(redisStore, datastore, authzAuthz)
+	bizBiz := biz.NewBiz(datastore, authzAuthz)
 	validator := validation.New(datastore)
 	userRetriever := &UserRetriever{
 		store: datastore,

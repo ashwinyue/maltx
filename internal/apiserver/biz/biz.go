@@ -18,7 +18,6 @@ import (
 	// Post V2 版本（未实现，仅展示用）
 	// postv2 "github.com/ashwinyue/maltx/internal/apiserver/biz/v2/post".
 	"github.com/ashwinyue/maltx/internal/apiserver/store"
-	redisstore "github.com/ashwinyue/maltx/pkg/cache/store/redis"
 )
 
 // ProviderSet 是一个 Wire 的 Provider 集合，用于声明依赖注入的规则.
@@ -41,15 +40,14 @@ type IBiz interface {
 type biz struct {
 	store store.IStore
 	authz *authz.Authz
-	cache *redisstore.RedisStore
 }
 
 // 确保 biz 实现了 IBiz 接口.
 var _ IBiz = (*biz)(nil)
 
 // NewBiz 创建一个 IBiz 类型的实例.
-func NewBiz(cache *redisstore.RedisStore, store store.IStore, authz *authz.Authz) *biz {
-	return &biz{cache: cache, store: store, authz: authz}
+func NewBiz(store store.IStore, authz *authz.Authz) *biz {
+	return &biz{store: store, authz: authz}
 }
 
 // UserV1 返回一个实现了 UserBiz 接口的实例.
@@ -59,5 +57,5 @@ func (b *biz) UserV1() userv1.UserBiz {
 
 // PostV1 返回一个实现了 PostBiz 接口的实例.
 func (b *biz) PostV1() postv1.PostBiz {
-	return postv1.New(b.cache, b.store)
+	return postv1.New(b.store)
 }

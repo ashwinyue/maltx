@@ -10,7 +10,6 @@ package post
 
 import (
 	"context"
-	redisstore "github.com/ashwinyue/maltx/pkg/cache/store/redis"
 
 	"github.com/ashwinyue/maltx/pkg/store/where"
 	"github.com/jinzhu/copier"
@@ -39,21 +38,20 @@ type PostExpansion interface{}
 // postBiz 是 PostBiz 接口的实现.
 type postBiz struct {
 	store store.IStore
-	cache *redisstore.RedisStore
 }
 
 // 确保 postBiz 实现了 PostBiz 接口.
 var _ PostBiz = (*postBiz)(nil)
 
 // New 创建 postBiz 的实例.
-func New(cache *redisstore.RedisStore, store store.IStore) *postBiz {
-	return &postBiz{cache: cache, store: store}
+func New(store store.IStore) *postBiz {
+	return &postBiz{store: store}
 }
 
 // Create 实现 PostBiz 接口中的 Create 方法.
 func (b *postBiz) Create(ctx context.Context, rq *apiv1.CreatePostRequest) (*apiv1.CreatePostResponse, error) {
 	// todo
-	b.cache.Del(ctx, "aaa")
+	b.store.Post().Create2(ctx)
 
 	var postM model.PostM
 	_ = copier.Copy(&postM, rq)
