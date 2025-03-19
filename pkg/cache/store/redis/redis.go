@@ -33,6 +33,10 @@ func NewRedis(client *redis.Client) *RedisStore {
 	}
 }
 
+func (s *RedisStore) RDS() *redis.Client {
+	return s.client
+}
+
 // Get returns data stored from a given key.
 func (s *RedisStore) Get(ctx context.Context, key any) (any, error) {
 	obj, err := s.client.Get(ctx, key.(string)).Result()

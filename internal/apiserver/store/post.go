@@ -9,8 +9,6 @@ package store
 
 import (
 	"context"
-	redisstore "github.com/ashwinyue/maltx/pkg/cache/store/redis"
-
 	genericstore "github.com/ashwinyue/maltx/pkg/store"
 	"github.com/ashwinyue/maltx/pkg/store/where"
 
@@ -30,15 +28,14 @@ type PostStore interface {
 
 // PostExpansion 定义了帖子操作的附加方法.
 type PostExpansion interface {
-	Create2(ctx context.Context) error
 }
 
 // postStore 是 PostStore 接口的实现.
 type postStore struct {
 	*genericstore.Store[model.PostM]
-	Rds *redisstore.RedisStore
+	//Rds *redisstore.RedisStore
 
-	keyPrefix string
+	//keyPrefix string
 }
 
 // 确保 postStore 实现了 PostStore 接口.
@@ -47,19 +44,29 @@ var _ PostStore = (*postStore)(nil)
 // newPostStore 创建 postStore 的实例.
 func newPostStore(store *datastore) *postStore {
 	return &postStore{
-		Store:     genericstore.NewStore[model.PostM](store, NewLogger()),
-		Rds:       store.cache,
-		keyPrefix: "post:",
+		Store: genericstore.NewStore[model.PostM](store, NewLogger()),
+		//Rds:       store.cache,
+		//keyPrefix: "post:",
 	}
 }
 
-func (s *postStore) buildKey(key string) string {
-	return s.keyPrefix + key
-}
-
-func (s *postStore) Create2(ctx context.Context) error {
-	key := s.buildKey("aaa")
-	// todo
-	s.Rds.Del(ctx, key)
-	return nil
-}
+//func (s *postStore) buildKey(key string) string {
+//	return s.keyPrefix + key
+//}
+//
+//func (s *postStore) lockIns() *distlock.RedisLocker {
+//	return distlock.NewRedisLocker(s.Rds.RDS(), distlock.WithLockName(""))
+//}
+//func (s *postStore) LockSomething(ctx context.Context) error {
+//	lock := s.lockIns()
+//	err := lock.Lock(ctx)
+//	if err != nil {
+//		return lock.Unlock(ctx)
+//	}
+//	return nil
+//}
+//
+//func (s *postStore) UnLockSomething(ctx context.Context) error {
+//	lock := s.lockIns()
+//	return lock.Unlock(ctx)
+//}

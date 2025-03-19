@@ -22,7 +22,7 @@ func main() {
 	if err != nil {
 		log.Fatalf("failed to connect to redis: %v", err)
 	}
-
+	// todo 使用opts定义lockname
 	locker := distlock.NewRedisLocker(db)
 
 	ctx := context.Background()

@@ -10,7 +10,6 @@ package store
 
 import (
 	"context"
-	redisstore "github.com/ashwinyue/maltx/pkg/cache/store/redis"
 	"sync"
 
 	"github.com/ashwinyue/maltx/pkg/store/where"
@@ -52,17 +51,16 @@ type datastore struct {
 	// 可以根据需要添加其他数据库实例
 	// fake *gorm.DB
 
-	cache *redisstore.RedisStore
 }
 
 // 确保 datastore 实现了 IStore 接口.
 var _ IStore = (*datastore)(nil)
 
 // NewStore 创建一个 IStore 类型的实例.
-func NewStore(db *gorm.DB, cache *redisstore.RedisStore) *datastore {
+func NewStore(db *gorm.DB) *datastore {
 	// 确保 S 只被初始化一次
 	once.Do(func() {
-		S = &datastore{core: db, cache: cache}
+		S = &datastore{core: db}
 	})
 
 	return S

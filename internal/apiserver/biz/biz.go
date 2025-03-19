@@ -9,6 +9,7 @@ package biz
 //go:generate mockgen -destination mock_biz.go -package biz github.com/ashwinyue/maltx/internal/apiserver/biz IBiz
 
 import (
+	"github.com/ashwinyue/maltx/internal/apiserver/cache"
 	"github.com/ashwinyue/maltx/pkg/authz"
 	"github.com/google/wire"
 
@@ -40,14 +41,15 @@ type IBiz interface {
 type biz struct {
 	store store.IStore
 	authz *authz.Authz
+	cache cache.ICache
 }
 
 // 确保 biz 实现了 IBiz 接口.
 var _ IBiz = (*biz)(nil)
 
 // NewBiz 创建一个 IBiz 类型的实例.
-func NewBiz(store store.IStore, authz *authz.Authz) *biz {
-	return &biz{store: store, authz: authz}
+func NewBiz(cache cache.ICache, store store.IStore, authz *authz.Authz) *biz {
+	return &biz{cache: cache, store: store, authz: authz}
 }
 
 // UserV1 返回一个实现了 UserBiz 接口的实例.
@@ -57,5 +59,5 @@ func (b *biz) UserV1() userv1.UserBiz {
 
 // PostV1 返回一个实现了 PostBiz 接口的实例.
 func (b *biz) PostV1() postv1.PostBiz {
-	return postv1.New(b.store)
+	return postv1.New(b.cache, b.store)
 }

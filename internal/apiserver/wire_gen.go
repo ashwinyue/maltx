@@ -8,6 +8,7 @@ package apiserver
 
 import (
 	"github.com/ashwinyue/maltx/internal/apiserver/biz"
+	"github.com/ashwinyue/maltx/internal/apiserver/cache"
 	"github.com/ashwinyue/maltx/internal/apiserver/pkg/validation"
 	"github.com/ashwinyue/maltx/internal/apiserver/store"
 	"github.com/ashwinyue/maltx/internal/pkg/server"
@@ -18,21 +19,22 @@ import (
 
 func InitializeWebServer(config *Config) (server.Server, error) {
 	string2 := config.ServerMode
-	db, err := ProvideDB(config)
-	if err != nil {
-		return nil, err
-	}
 	redisStore, err := ProvideRedis(config)
 	if err != nil {
 		return nil, err
 	}
-	datastore := store.NewStore(db, redisStore)
+	datacache := cache.NewDataCache(redisStore)
+	db, err := ProvideDB(config)
+	if err != nil {
+		return nil, err
+	}
+	datastore := store.NewStore(db)
 	v := authz.DefaultOptions()
 	authzAuthz, err := authz.NewAuthz(db, v...)
 	if err != nil {
 		return nil, err
 	}
-	bizBiz := biz.NewBiz(datastore, authzAuthz)
+	bizBiz := biz.NewBiz(datacache, datastore, authzAuthz)
 	validator := validation.New(datastore)
 	userRetriever := &UserRetriever{
 		store: datastore,

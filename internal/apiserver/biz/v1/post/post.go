@@ -10,7 +10,7 @@ package post
 
 import (
 	"context"
-
+	"github.com/ashwinyue/maltx/internal/apiserver/cache"
 	"github.com/ashwinyue/maltx/pkg/store/where"
 	"github.com/jinzhu/copier"
 
@@ -38,20 +38,22 @@ type PostExpansion interface{}
 // postBiz 是 PostBiz 接口的实现.
 type postBiz struct {
 	store store.IStore
+	cache cache.ICache
 }
 
 // 确保 postBiz 实现了 PostBiz 接口.
 var _ PostBiz = (*postBiz)(nil)
 
 // New 创建 postBiz 的实例.
-func New(store store.IStore) *postBiz {
-	return &postBiz{store: store}
+func New(cache cache.ICache, store store.IStore) *postBiz {
+	return &postBiz{cache: cache, store: store}
 }
 
 // Create 实现 PostBiz 接口中的 Create 方法.
 func (b *postBiz) Create(ctx context.Context, rq *apiv1.CreatePostRequest) (*apiv1.CreatePostResponse, error) {
 	// todo
-	b.store.Post().Create2(ctx)
+	//b.store.Post().Create2(ctx)
+	_ = b.cache.Demo().Create(ctx, "")
 
 	var postM model.PostM
 	_ = copier.Copy(&postM, rq)
