@@ -8,6 +8,7 @@ package apiserver
 
 import (
 	"context"
+	"github.com/redis/go-redis/v9"
 	"os"
 	"os/signal"
 	"syscall"
@@ -55,6 +56,7 @@ type Config struct {
 	HTTPOptions       *genericoptions.HTTPOptions
 	GRPCOptions       *genericoptions.GRPCOptions
 	MySQLOptions      *genericoptions.MySQLOptions
+	RedisOptions      *genericoptions.RedisOptions
 }
 
 // UnionServer 定义一个联合服务器. 根据 ServerMode 决定要启动的服务器类型.
@@ -204,6 +206,10 @@ func (r *UserRetriever) GetUser(ctx context.Context, userID string) (*model.User
 // ProvideDB 根据配置提供一个数据库实例。
 func ProvideDB(cfg *Config) (*gorm.DB, error) {
 	return cfg.NewDB()
+}
+
+func ProvideRedis(cfg *Config) (*redis.Client, error) {
+	return cfg.RedisOptions.NewClient()
 }
 
 func NewWebServer(serverMode string, serverConfig *ServerConfig) (server.Server, error) {
