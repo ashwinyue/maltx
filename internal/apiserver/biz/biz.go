@@ -10,7 +10,6 @@ package biz
 
 import (
 	"github.com/ashwinyue/maltx/pkg/authz"
-	"github.com/ashwinyue/maltx/pkg/cache"
 	"github.com/google/wire"
 
 	postv1 "github.com/ashwinyue/maltx/internal/apiserver/biz/v1/post"
@@ -20,7 +19,6 @@ import (
 	// postv2 "github.com/ashwinyue/maltx/internal/apiserver/biz/v2/post".
 	"github.com/ashwinyue/maltx/internal/apiserver/store"
 	redisstore "github.com/ashwinyue/maltx/pkg/cache/store/redis"
-	"github.com/golang/protobuf/ptypes/any"
 )
 
 // ProviderSet 是一个 Wire 的 Provider 集合，用于声明依赖注入的规则.
@@ -43,14 +41,14 @@ type IBiz interface {
 type biz struct {
 	store store.IStore
 	authz *authz.Authz
-	cache redisstore.RedisStore
+	cache *redisstore.RedisStore
 }
 
 // 确保 biz 实现了 IBiz 接口.
 var _ IBiz = (*biz)(nil)
 
 // NewBiz 创建一个 IBiz 类型的实例.
-func NewBiz(cache redisstore.RedisStore, store store.IStore, authz *authz.Authz) *biz {
+func NewBiz(cache *redisstore.RedisStore, store store.IStore, authz *authz.Authz) *biz {
 	return &biz{cache: cache, store: store, authz: authz}
 }
 

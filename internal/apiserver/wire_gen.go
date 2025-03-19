@@ -18,6 +18,10 @@ import (
 
 func InitializeWebServer(config *Config) (server.Server, error) {
 	string2 := config.ServerMode
+	redisStore, err := ProvideRedis(config)
+	if err != nil {
+		return nil, err
+	}
 	db, err := ProvideDB(config)
 	if err != nil {
 		return nil, err
@@ -28,7 +32,7 @@ func InitializeWebServer(config *Config) (server.Server, error) {
 	if err != nil {
 		return nil, err
 	}
-	bizBiz := biz.NewBiz(datastore, authzAuthz)
+	bizBiz := biz.NewBiz(redisStore, datastore, authzAuthz)
 	validator := validation.New(datastore)
 	userRetriever := &UserRetriever{
 		store: datastore,

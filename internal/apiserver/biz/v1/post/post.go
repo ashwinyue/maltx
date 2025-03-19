@@ -39,14 +39,14 @@ type PostExpansion interface{}
 // postBiz 是 PostBiz 接口的实现.
 type postBiz struct {
 	store store.IStore
-	cache redisstore.RedisStore
+	cache *redisstore.RedisStore
 }
 
 // 确保 postBiz 实现了 PostBiz 接口.
 var _ PostBiz = (*postBiz)(nil)
 
 // New 创建 postBiz 的实例.
-func New(cache redisstore.RedisStore, store store.IStore) *postBiz {
+func New(cache *redisstore.RedisStore, store store.IStore) *postBiz {
 	return &postBiz{cache: cache, store: store}
 }
 
