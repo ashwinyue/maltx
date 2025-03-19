@@ -53,7 +53,7 @@ func New(cache cache.ICache, store store.IStore) *postBiz {
 func (b *postBiz) Create(ctx context.Context, rq *apiv1.CreatePostRequest) (*apiv1.CreatePostResponse, error) {
 	// todo
 	//b.store.Post().Create2(ctx)
-	_ = b.cache.Demo().Create(ctx, "")
+	_ = b.cache.Demo().Create(ctx, "aaa")
 
 	var postM model.PostM
 	_ = copier.Copy(&postM, rq)
