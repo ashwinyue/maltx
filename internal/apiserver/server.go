@@ -8,7 +8,6 @@ package apiserver
 
 import (
 	"context"
-	"github.com/redis/go-redis/v9"
 	"os"
 	"os/signal"
 	"syscall"
@@ -31,6 +30,7 @@ import (
 	"github.com/ashwinyue/maltx/internal/pkg/log"
 	mw "github.com/ashwinyue/maltx/internal/pkg/middleware/gin"
 	"github.com/ashwinyue/maltx/internal/pkg/server"
+	redisstore "github.com/ashwinyue/maltx/pkg/cache/store/redis"
 )
 
 const (
@@ -48,6 +48,8 @@ const (
 // Config 配置结构体，用于存储应用相关的配置.
 // 不用 viper.Get，是因为这种方式能更加清晰的知道应用提供了哪些配置项.
 type Config struct {
+	DisableCache bool
+
 	ServerMode        string
 	JWTKey            string
 	Expiration        time.Duration
@@ -208,8 +210,13 @@ func ProvideDB(cfg *Config) (*gorm.DB, error) {
 	return cfg.NewDB()
 }
 
-func ProvideRedis(cfg *Config) (*redis.Client, error) {
-	return cfg.RedisOptions.NewClient()
+func ProvideRedis(cfg *Config) (*redisstore.RedisStore, error) {
+	rds, err := cfg.RedisOptions.NewClient()
+	if err != nil {
+		return nil, err
+	}
+
+	return redisstore.NewRedis(rds), nil
 }
 
 func NewWebServer(serverMode string, serverConfig *ServerConfig) (server.Server, error) {

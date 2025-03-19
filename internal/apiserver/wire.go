@@ -25,8 +25,8 @@ func InitializeWebServer(*Config) (server.Server, error) {
 		wire.NewSet(NewWebServer, wire.FieldsOf(new(*Config), "ServerMode")),
 		wire.Struct(new(ServerConfig), "*"), // * 表示注入全部字段
 		wire.NewSet(store.ProviderSet, biz.ProviderSet),
-		ProvideDB, // 提供数据库实例
-		//ProvideRedis, // 提供Redis实例
+		ProvideDB,    // 提供数据库实例
+		ProvideRedis, // 提供Redis实例
 		validation.ProviderSet,
 		wire.NewSet(
 			wire.Struct(new(UserRetriever), "*"),
