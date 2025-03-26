@@ -40,15 +40,16 @@ type GenerateConfig struct {
 
 // 预定义的生成配置.
 var generateConfigs = map[string]GenerateConfig{
-	"mb": {ModelPackagePath: "../../internal/apiserver/model", GenerateFunc: GenerateMiniBlogModels},
+	//"mb": {ModelPackagePath: "../../internal/apiserver/model", GenerateFunc: GenerateMiniBlogModels},
+	"mb": {ModelPackagePath: "../maltx/internal/apiserver/model", GenerateFunc: GenerateMiniBlogModels},
 }
 
 // 命令行参数.
 var (
 	addr       = pflag.StringP("addr", "a", "127.0.0.1:3306", "MySQL host address.")
-	username   = pflag.StringP("username", "u", "miniblog", "Username to connect to the database.")
-	password   = pflag.StringP("password", "p", "miniblog1234", "Password to use when connecting to the database.")
-	database   = pflag.StringP("db", "d", "miniblog", "Database name to connect to.")
+	username   = pflag.StringP("username", "u", "root", "Username to connect to the database.")
+	password   = pflag.StringP("password", "p", "root", "Password to use when connecting to the database.")
+	database   = pflag.StringP("db", "d", "maltx", "Database name to connect to.")
 	modelPath  = pflag.String("model-pkg-path", "", "Generated model code's package name.")
 	components = pflag.StringSlice("component", []string{"mb"}, "Generated model code's for specified component.")
 	help       = pflag.BoolP("help", "h", false, "Show this help message.")
@@ -161,36 +162,36 @@ func applyGeneratorOptions(g *gen.Generator) {
 
 // GenerateMiniBlogModels 为 miniblog 组件生成模型.
 func GenerateMiniBlogModels(g *gen.Generator) {
+	//g.GenerateModelAs(
+	//	"user",
+	//	"UserM",
+	//	gen.FieldIgnore("placeholder"),
+	//	gen.FieldGORMTag("username", func(tag field.GormTag) field.GormTag {
+	//		tag.Set("uniqueIndex", "idx_user_username")
+	//		return tag
+	//	}),
+	//	gen.FieldGORMTag("userID", func(tag field.GormTag) field.GormTag {
+	//		tag.Set("uniqueIndex", "idx_user_userID")
+	//		return tag
+	//	}),
+	//	gen.FieldGORMTag("phone", func(tag field.GormTag) field.GormTag {
+	//		tag.Set("uniqueIndex", "idx_user_phone")
+	//		return tag
+	//	}),
+	//)
 	g.GenerateModelAs(
 		"user",
 		"UserM",
 		gen.FieldIgnore("placeholder"),
-		gen.FieldGORMTag("username", func(tag field.GormTag) field.GormTag {
-			tag.Set("uniqueIndex", "idx_user_username")
-			return tag
-		}),
-		gen.FieldGORMTag("userID", func(tag field.GormTag) field.GormTag {
-			tag.Set("uniqueIndex", "idx_user_userID")
-			return tag
-		}),
 		gen.FieldGORMTag("phone", func(tag field.GormTag) field.GormTag {
 			tag.Set("uniqueIndex", "idx_user_phone")
 			return tag
 		}),
 	)
-	g.GenerateModelAs(
-		"post",
-		"PostM",
-		gen.FieldIgnore("placeholder"),
-		gen.FieldGORMTag("postID", func(tag field.GormTag) field.GormTag {
-			tag.Set("uniqueIndex", "idx_post_postID")
-			return tag
-		}),
-	)
-	g.GenerateModelAs(
-		"casbin_rule",
-		"CasbinRuleM",
-		gen.FieldRename("ptype", "PType"),
-		gen.FieldIgnore("placeholder"),
-	)
+	//g.GenerateModelAs(
+	//	"casbin_rule",
+	//	"CasbinRuleM",
+	//	gen.FieldRename("ptype", "PType"),
+	//	gen.FieldIgnore("placeholder"),
+	//)
 }
