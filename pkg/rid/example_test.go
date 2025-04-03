@@ -9,7 +9,7 @@ package rid_test
 import (
 	"fmt"
 
-	"github.com/onexstack/miniblog/internal/pkg/rid"
+	"github.com/ashwinyue/maltx/internal/pkg/rid"
 )
 
 func ExampleResourceID_String() {

@@ -12,7 +12,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/onexstack/miniblog/internal/pkg/rid"
+	"github.com/ashwinyue/maltx/internal/pkg/rid"
 )
 
 // Mock Salt function used for testing
