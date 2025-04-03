@@ -33,9 +33,6 @@ type PostExpansion interface {
 // postStore 是 PostStore 接口的实现.
 type postStore struct {
 	*genericstore.Store[model.PostM]
-	//Rds *redisstore.RedisStore
-
-	//keyPrefix string
 }
 
 // 确保 postStore 实现了 PostStore 接口.
@@ -45,28 +42,5 @@ var _ PostStore = (*postStore)(nil)
 func newPostStore(store *datastore) *postStore {
 	return &postStore{
 		Store: genericstore.NewStore[model.PostM](store, NewLogger()),
-		//Rds:       store.cache,
-		//keyPrefix: "post:",
 	}
 }
-
-//func (s *postStore) buildKey(key string) string {
-//	return s.keyPrefix + key
-//}
-//
-//func (s *postStore) lockIns() *distlock.RedisLocker {
-//	return distlock.NewRedisLocker(s.Rds.RDS(), distlock.WithLockName(""))
-//}
-//func (s *postStore) LockSomething(ctx context.Context) error {
-//	lock := s.lockIns()
-//	err := lock.Lock(ctx)
-//	if err != nil {
-//		return lock.Unlock(ctx)
-//	}
-//	return nil
-//}
-//
-//func (s *postStore) UnLockSomething(ctx context.Context) error {
-//	lock := s.lockIns()
-//	return lock.Unlock(ctx)
-//}
