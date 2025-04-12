@@ -50,4 +50,4 @@ gen.generate:
 
 #protoc --proto_path=pkg/api --proto_path=third_party/protobuf --go_out=paths=source_relative:pkg/api --go-grpc_out=paths=source_relative:pkg/api --grpc-gateway_out=allow_delete_body=true,paths=source_relative:pkg/api --openapiv2_out=api/openapi --openapiv2_opt=allow_delete_body=true,logtostderr=true --defaults_out=paths=source_relative:pkg/api pkg/api/**/*.proto
 
-#protoc --proto_path=pkg\api --proto_path=third_party\protobuf --go_out=paths=source_relative:pkg\api --go-grpc_out=paths=source_relative:pkg\api --grpc-gateway_out=allow_delete_body=true,paths=source_relative:pkg\api --openapiv2_out=api\openapi --openapiv2_opt=allow_delete_body=true,logtostderr=true --defaults_out=paths=source_relative:pkg\api pkg\*\*.proto
+protoc --proto_path=pkg\api --proto_path=third_party\protobuf --go_out=paths=source_relative:pkg\api --go-grpc_out=paths=source_relative:pkg\api --grpc-gateway_out=allow_delete_body=true,paths=source_relative:pkg\api --openapiv2_out=api\openapi --openapiv2_opt=allow_delete_body=true,logtostderr=true --defaults_out=paths=source_relative:pkg\api pkg\api\auth\v1\*.proto
